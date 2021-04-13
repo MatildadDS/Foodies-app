@@ -8,6 +8,9 @@ import RecipesByIngredients from './pages/RecipesByIngredients';
 import DetailsRecipe from './pages/DetailsRecipe';
 import Favoris from './pages/Favoris';
 import { Navbar } from './components/Navbar';
+// Vincent
+import {HeaderRecipeDetails} from './components/Header'
+import {RecipeDetails, RecipeCard} from './components/Recipes'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -26,6 +29,10 @@ function App() {
           <Route path="/Categories" exact component={Categories} />
           <Route path="/RecipesByIngredients" exact component={RecipesByIngredients} />
           <Route path="/DetailsRecipes" exact component={DetailsRecipe} />
+          {/* <HeaderRecipeDetails/>
+      <RecipeDetails/>
+      <RecipeCard/> */}
+
           <Route path="/Favoris" exact component={Favoris} />
         </Switch>
 
