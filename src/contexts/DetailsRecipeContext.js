@@ -1,7 +1,3 @@
-import {createContext} from 'react';
+import { createContext } from "react";
 
-const DetailsRecipeContext = createContext(
-    {
-        
-    }
-)
+const DetailsRecipeContext = React.createContext();

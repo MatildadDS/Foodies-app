@@ -3,13 +3,12 @@ import "./App.css";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import HeaderRecipeDetails  from "./components/Header"; //dkong
+import HeaderRecipeDetails from "./components/Header"; //dkong
 import { RecipeDetails, RecipeCard } from "./components/Recipes"; //
 
 function App() {
   return (
     <div className="App">
-      
       <Router>
         <ul>
           <li>
@@ -22,9 +21,11 @@ function App() {
 
         <Switch>
           <Route path="/recipe-details">
-            <HeaderRecipeDetails />
-            <RecipeDetails />
-            {/* <RecipeDetails prop={prop} /> */}
+            <DetailsRecipeContext.Provider testValue={"hey"}>
+              <HeaderRecipeDetails />
+              <RecipeDetails />
+              {/* <RecipeDetails prop={prop} /> */}
+            </DetailsRecipeContext.Provider>
           </Route>
           <Route path="/">CONTENTS OF Homepage</Route>
         </Switch>
