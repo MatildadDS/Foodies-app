@@ -1,6 +1,6 @@
 import DropDownMenu from './DropDownMenu';
-import SearchBar from './SearchBar';
+import Search from './SearchBar';
 
 
 
-export { DropDownMenu, SearchBar};
+export { DropDownMenu, Search};

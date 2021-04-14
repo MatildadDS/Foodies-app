@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class DropDownMenu extends React.Component {
     constructor() {
         super();
@@ -35,7 +34,7 @@ class DropDownMenu extends React.Component {
 
     render() {
         return (
-            <nav>
+            <nav className="navBar">
                 <button onClick={this.showMenu}>
                     Recettes ▾
                 </button>
@@ -48,9 +47,9 @@ class DropDownMenu extends React.Component {
                                     this.dropdownMenu = element;
                                 }}
                             >
-                                <button> Catégories </button>
-                                <button> Pays </button>
-                                <button> Ingrédients </button>
+                                <button className="button"> Catégories </button>
+                                <button className="button"> Pays </button>
+                                <button className="button"> Ingrédients </button>
                             </div>
                         )
                         : (

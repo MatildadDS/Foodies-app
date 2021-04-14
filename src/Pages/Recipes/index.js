@@ -2,6 +2,7 @@ import React from 'react'
 import Footer from '../../components/Footer'
 import Title from '../../components/Titles'
 class Recipes extends React.Component{
+    
     render(){
         return <div>
          <div>

@@ -1,30 +1,52 @@
-<<<<<<< HEAD
-
-export default Hero;
-import  {DropDownMenu } from '../../components/Navbar';
-=======
->>>>>>> c5d2c1ced724fbd7c3b2d6cdf24c585744a71be5
+import  {DropDownMenu,Search } from '../../components/Navbar';
+import './Hero.scss'
+import '../../components/Footer/Footer.scss'
 import React from 'react'
-import Footer from '../../components/Footer'
+
 class Hero extends React.Component{
+    constructor(props){
+    super(props);
+    this.state={
+        items: [],
+        isLoaded:false
+    }
+}
+componentDidMount(){
+    fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
+    .then(Response=>Response.json())
+    .then(json=>{
+        this.setState({
+            isLoaded:true,
+            items:json,
+        })
+    })
+}
+
     render(){
+    var{isLoaded,items}=this.state;
+    if(!isLoaded){
+        return <div> lodding...</div>
+    }else{
+        const img = items.categories[2].strCategoryThumb
+console.log(items.categories[2].strCategoryThumb)
         return <div>
-<<<<<<< HEAD
             <DropDownMenu />
-=======
->>>>>>> c5d2c1ced724fbd7c3b2d6cdf24c585744a71be5
-         
+         <Search/>
             <div className="container">
-                <p>Lorem Ipsum is simply dummy</p>
-                <button> déscouver our recipes</button>
+            <h1>Foodies</h1>
+            <p>of type and scrambled it to make a type specimen
+book. It has survived not only five
+centuries, but also the leap into electronic typesetting,
+remaining essentially unchanged. It was po</p>
+                <img  className="HeroImg" src={img}/>
+                
+                <button className="HeroButton" onClick={event =>  window.location.href='/homePage'}> déscouver our recipes</button>
             </div>
 
-            <Footer/>
+            
         </div>
     }
 }
-<<<<<<< HEAD
+     
+}
 export default Hero
-=======
-export default Hero
->>>>>>> c5d2c1ced724fbd7c3b2d6cdf24c585744a71be5
