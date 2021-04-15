@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.scss'
 import Footer from './components/Footer'
-
 import Hero from './Pages/Hero'
 import HomePage from './Pages/Homepage'
 import Recipes from './Pages/Recipes'
@@ -15,7 +14,7 @@ function App() {
 <Switch>
 <Route exact path="/" component={Hero}/>
 <Route  exact path="/homePage" component={HomePage}/>
-<Route exact path="/Recipies/:id" component={Recipes}/>
+<Route path="Recipises/:id" component={Recipes} />
 <Route exact path="/RecipiDétail" component={RecipiDétail}/>
 
 </Switch>

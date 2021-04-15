@@ -1,9 +1,13 @@
 import React from 'react'
 import Footer from '../../components/Footer'
 import Title from '../../components/Titles'
-class Recipes extends React.Component{
-    
-    render(){
+
+import {
+    BrowserRouter as useParams
+  } from "react-router-dom";
+function Recipes (props){
+        let  id  = props.useParams;
+        console.log(id)
         return <div>
          <div>
              <Title text="name of récipes"/>
@@ -14,5 +18,4 @@ class Recipes extends React.Component{
             <Footer/>
         </div>
     }
-}
 export default Recipes 
