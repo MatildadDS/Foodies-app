@@ -49,6 +49,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import HeaderRecipeDetails from "./components/Header"; //dkong
 import { RecipeDetails, RecipeCard } from "./components/Recipes"; //
+import RecipeDetailsPage from "./Pages/DetailsRecipe";
+// import DetailsRecipeContext from "./contexts/DetailsRecipeContext";
+// import React, {Component} from 'react';
+
+// const ExampleContext = React.createContext('light'); // test
 
 function App() {
   return (
@@ -64,12 +69,13 @@ function App() {
         </ul>
 
         <Switch>
-          <Route path="/recipe-details">
-            <DetailsRecipeContext.Provider testValue={"hey"}>
-              <HeaderRecipeDetails />
-              <RecipeDetails />
-              {/* <RecipeDetails prop={prop} /> */}
-            </DetailsRecipeContext.Provider>
+          <Route exact path="/recipe-details" component={RecipeDetailsPage}>
+            {/* <ExampleContext.Provider value={"hey"}> */}
+              {/* <HeaderRecipeDetails />
+              <RecipeDetails /> */}
+              
+              {/* {this.value} */}
+            {/* </ExampleContext.Provider> */}
           </Route>
           <Route path="/">CONTENTS OF Homepage</Route>
         </Switch>

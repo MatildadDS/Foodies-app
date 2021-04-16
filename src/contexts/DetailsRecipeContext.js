@@ -1,3 +1,6 @@
-import { createContext } from "react";
+// import React from "React";
+// import { createContext } from "react";
 
-const DetailsRecipeContext = React.createContext();
+// const DetailsRecipeContext = React.createContext();
+
+// export default DetailsRecipeContext;
