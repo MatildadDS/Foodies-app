@@ -1,6 +1,6 @@
-import DropDownMenu from './DropDownMenu';
-import SearchBox from './SearchBar';
+import Navbar from './Navbar';
+import SearchBar from './SearchBar';
 
 
 
-export { DropDownMenu, SearchBox};
+export { Navbar, SearchBar };

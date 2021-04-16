@@ -1,0 +1,42 @@
+.fullnav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 70px;
+    background-color:transparent;
+}
+
+nav{
+  margin-left: 40px;
+  padding-top: 10px;
+}
+
+
+nav a{
+  text-decoration: none;
+  margin-left: 20px;
+  color: white;
+
+}
+
+
+.App-logo {
+  height: 4vmin;
+  pointer-events: none;
+  margin-top: 3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

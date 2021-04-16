@@ -1,0 +1,46 @@
+.homepage-container{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+}
+
+.categorie-title{
+    color: white;
+    text-align: center;
+}
+
+.random-title{
+    color: black;
+}
+
+h3{
+    font-size: 24px;
+    text-align: center;
+}
+
+.random-recipe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: auto;
+    margin: 0 30px 30px 0;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+	-webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+
+
+}
+
+img{
+    width: 300px;
+    border-radius: 50%;
+}
+
+.details{
+    width: 300px;
+}
