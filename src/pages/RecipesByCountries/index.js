@@ -1,14 +1,13 @@
 import React from 'react';
-import Footer from '../../components/Footer/footer';
 import SearchBar from "../../components/Navbar/SearchBar";
+import Footer from '../../components/Footer/footer';
 
 
-
-export default function DetailsRecipe() {
+export default function RecipesByCountries() {
     return (
         <div>
             <SearchBar />
-            <h2>Section Details Recipe</h2>
+            <h2>Section Recipes By Countries</h2>
             <Footer />
 
         </div>

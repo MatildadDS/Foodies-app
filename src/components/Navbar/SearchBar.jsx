@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import "./styles/SearchBar.scss";
+
 
 function Search() {
   const dataList = [
-   
-];
+
+  ];
 
   const [searchText, setSearchText] = useState("");
   const [data, setData] = useState(dataList);
@@ -33,8 +35,8 @@ function Search() {
 
   return (
     <div className="searchbar">
-       <input
-        style={{ marginLeft: 5,  paddingLeft: 80, paddingRight: 60}}
+      <input
+        style={{ marginLeft: 5, paddingLeft: 80, paddingRight: 60 }}
         type="text"
         placeholder="🔍 Type to search..."
         value={searchText}
@@ -50,7 +52,7 @@ function Search() {
           </div>
         })}
         <div className="clearboth"></div>
-       </div>
+      </div>
     </div>
   );
 }

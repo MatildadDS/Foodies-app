@@ -1,0 +1,75 @@
+.categorie-list{
+    margin: auto;
+    font-size: 25px;
+    height: 600px;
+
+
+    ul{
+        left: 0;
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+        transform: none;
+        padding: 20px;
+        margin: auto;
+        justify-content: center;
+        
+    }
+
+    li{
+        border: 0.5px solid white;
+        padding: 40px;
+        margin: 20px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.7);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+
+    }
+
+    li:nth-child(1){
+        color: rgb(220, 5, 12);
+    }
+
+    li:nth-child(2){
+        color: rgb(241, 147, 45);
+    }
+    li:nth-child(3){
+        color: rgb(136, 46, 114);
+    }
+    li:nth-child(4){
+        color: rgb(78, 178, 101);
+    }
+    li:nth-child(5){
+        color: rgb(82, 137, 199);
+    }
+    li:nth-child(6){
+        color: rgb(246, 243, 159);
+    }
+    li:nth-child(7){
+        color: rgb(123, 175, 222);
+    }
+    li:nth-child(8){
+        color: rgb(144, 201, 134);
+    }
+    li:nth-child(9){
+        color: rgb(246, 193, 65);
+    }
+    li:nth-child(10){
+        color: rgb(165, 23, 14);
+    }
+    li:nth-child(11){
+        color: rgb(153, 79, 136);
+    }
+    li:nth-child(12){
+        color: rgb(174, 118, 163);
+    }
+    li:nth-child(13){
+        color: rgb(82, 137, 199);
+    }
+    li:nth-child(14){
+        color: rgb(68, 160, 89);
+    }
+   
+}
