@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-
+import '../Areas/Areas.scss'
 import {
     BrowserRouter as useParams
   } from "react-router-dom";
@@ -30,20 +30,20 @@ class Areas extends React.Component{
         return <div> lodding...</div>
     }else{
        
-        console.log(this.props)
-        return <div>
-            <Title text="Feedies"/>
-            <div>
-            <div className="Areas">
-            <h2> Our Areas</h2>
-            
-         {Areas.meals.map(item=>(<h2 onClick={() =>  window.location.href='/Recipes/:id'}>{item.strArea}</h2>
-            
-         ))}
-       </div>
-        </div>
+        console.log(Areas)
+        return <div className="Areas">
+                           <h2> Our Areas</h2>
+                        <div className="container">
+                               {Areas.meals.map(item=>(
+                
+                             <h2 className="AreasNames"  onClick={() =>  window.location.href='/Recipes/'+item.strArea}>
+                                            {item.strArea}</h2>
+     
+                                    ))}
+                        </div>
+                  
        
-        </div>
+                </div>
         
     }
      

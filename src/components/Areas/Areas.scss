@@ -1,0 +1,27 @@
+.Areas{
+    background-color: rgba(240, 235, 236, 0.897);
+    color: black;
+   margin-bottom: 5%;
+}
+.container{
+    display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+ justify-content: center;
+ align-items: center;
+}
+.AreasNames{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3%;
+    margin-left: 5%;
+  
+border: black 2px solid;
+background-color: rgba(180, 201, 202, 0.52);
+height: 100px;
+width: 20%;
+font-size: 20px;
+text-align: center;
+    font-weight:bold;
+    transition: all 2s;
+}

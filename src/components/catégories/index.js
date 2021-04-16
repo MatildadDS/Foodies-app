@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import '../catégories/catégories.scss'
 
 import {
     BrowserRouter as useParams
@@ -30,16 +31,23 @@ class Catégories extends React.Component{
         return <div> lodding...</div>
     }else{
        
-        console.log(this.props)
+        console.log(catégories)
         return <div>
-            <Title text="Feedies"/>
-            <div className="categories">
-            <h2> Our Categories</h2>
-         {catégories.categories.map(item=>(<h2 onClick={() =>  window.location.href='/Recipes/:id'}>{item.strCategory}</h2>
+           
             
+            <h2> Our Categories</h2>
+            <div className="container">
+             {catégories.categories.map(item=>(
+                
+                          <div className="categories" onClick={() =>  window.location.href='/Recipes/'+ item.strCategory}>
+                                <p> {item.strCategory}</p> 
+                                <img className="catégoryImg" src={item.strCategoryThumb}></img>
+                           </div>
+                
+                          
          ))}
-       
-        </div>
+       </div>
+        
        
         </div>
         
