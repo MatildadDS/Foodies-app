@@ -1,46 +1,73 @@
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
+// import RecipeDetailsService from "../../services/recipeDetails"
 
 // e.preventDefault
 class RecipeDetails extends React.Component {
-  state = {
-    apiGetRes: [],
-    apiRes: [],
-    mealObject: {},
-  };
-
-  componentDidMount() {
-    // www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
-    axios
-      .get("https://themealdb.com/api/json/v1/1/search.php?s=Arrabiata")
-
-      .then((response) => {
-        // console.log(`+++RESULT:`, response.data.meals[0]);
-        const mealObject = response.data.meals[0];
-        console.log(mealObject);
-
-        this.setState({ mealObject: mealObject });
-      })
-
-      .catch((error) => console.error(error.message)); // USELESS CODE?
+  
+  constructor(props) {
+    super(props);
+    this.state = {
+      recipe: {},
+    };
   }
 
+  
+  
+  // constructor(
+  // props) {
+  //   data : {
+  //     strMeal : ''
+  //   }
+  // };
+  
+
+  // componentDidMount() {
+  //   // www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
+  //   // axios
+  //   //   .get("https://themealdb.com/api/json/v1/1/search.php?s=Arrabiata")
+    
+  //   RecipeDetailsService.getRecipe()
+  //     .then((response) => {
+  //       console.log(`+++RESULT:`, response.data.meals[0]);
+  //       const recipe = response.data.meals[0];
+  //       console.log(recipe);
+
+  //       this.setState({ recipe: recipe });
+  //     })
+
+  //     .catch((error) => console.error(error.message)); // USELESS CODE?
+
+
+  // }
+
   render() {
+    // console.log(this.props.data);
+    console.log(this.props);
+    const recipe = this.props.data;
     return (
       <section>
         <figure>
           <img
-            src={this.state.mealObject.strMealThumb}
-            alt={this.state.mealObject.strMeal}
+            src={recipe.strMealThumb}
+            alt={recipe.strMeal}
           />
         </figure>
-        <h3>{this.state.mealObject.strMeal}</h3>
+        <h3>{recipe.strMeal}</h3>
         <p></p>
         <p>Instructions/Steps:</p>
         <ul>
-          {this.state.mealObject.strInstructions}
+          {recipe.strInstructions}
 
         </ul>
+          
+        {Object.keys(recipe).map((keyName, i) => (
+    <li key={i}>
+        <span> key: {i} Contents: {recipe[keyName]}</span>
+    </li>
+))}
+          
+          
         <div>
           <button>Add to Favorites</button>
         </div>
