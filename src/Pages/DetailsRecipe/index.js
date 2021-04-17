@@ -12,41 +12,38 @@ class RecipeDetailsPage extends React.Component {
     this.state = {
       recipe: {},
       error: {},
-    };
+      splittedRecipeInstructions: ["Instructions loading"],
+    }
   }
 
-  //   componentWillMount() {}
-  // async
-
-  // try {
-  // RecipeDetailsService.getRecipe()
-  //   const response = await RecipeDetailsService.getRecipe();
   async componentDidMount() {
     const response = await axios.get(
       "https://themealdb.com/api/json/v1/1/search.php?s=Arrabiata"
     );
-    this.setState({ recipe: response.data.meals[0] });
-  }
-  // async handling: callbacks, promises (then, catch), >>> async await <<<
+    this.setState({
+      recipe: response.data.meals[0],
+    });
+    let splitted = this.state.recipe.strInstructions.split(".");
+    // let splitted = ["test"];
 
-  //   componentDidMount() {
-  // const id = this.props.+params.id
-  // try {
-  //   const response = await RecipeDetailsService.getRecipe();
-  //   console.log(response);
-  //   this.setState({ recipe: response.data });
-  // } catch (error) {
-  //   this.setState({ error: "Erreur serveur" });
-  // }
-  //   }
+    this.setState({
+      splittedRecipeInstructions: splitted,
+    });
+  } 
 
   render() {
     const recipe = this.state.recipe;
+    // let splittedRecipeInstructions = this.state.splittedRecipeInstructions;
+
+    let recipeObj = {
+      recipe: this.state.recipe,
+      splittedRecipeInstructions: this.state.splittedRecipeInstructions,
+    };
+
     return (
       <>
-        Contents of Recipe Details Page
         <HeaderRecipeDetails data={recipe} />
-        <RecipeDetails data={recipe} />
+        <RecipeDetails data={recipeObj} />
         <ReactPlayer url={recipe.strYoutube} />
       </>
     );

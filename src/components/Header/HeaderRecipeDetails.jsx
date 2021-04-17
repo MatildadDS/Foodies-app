@@ -10,9 +10,8 @@ class HeaderRecipeDetails extends React.Component {
           <p>{recipe.IdMeal}</p>
           <img src="" alt={recipe.area} />
         </div>
-        <h2>Category: {recipe.strCategory}</h2>
+        <h2>Category: <a href="" onClick={undefined}>{recipe.strCategory}</a></h2>
         <p>Tags: {recipe.strTags}</p>
-        {recipe.strYoutube}
       </header>
     );
   }
