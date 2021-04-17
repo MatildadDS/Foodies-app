@@ -1,8 +1,11 @@
 import React from "react";
+<<<<<<< HEAD
 
 import Footer from "../../components/Footer/footer";
 import SearchBar from "../../components/Navbar/SearchBar";
 
+=======
+>>>>>>> 7eb1334f642eb602ee5721245bc02a97242fc6fb
 import axios from "axios";
 import HeaderRecipeDetails from "../../components/Header/HeaderRecipeDetails";
 import RecipeDetails from "../../components/Recipes/RecipeDetails";
@@ -17,7 +20,11 @@ class RecipeDetailsPage extends React.Component {
       recipe: {},
       error: {},
       splittedRecipeInstructions: ["Instructions loading"],
+<<<<<<< HEAD
     };
+=======
+    }
+>>>>>>> 7eb1334f642eb602ee5721245bc02a97242fc6fb
   }
 
   async componentDidMount() {
@@ -32,7 +39,11 @@ class RecipeDetailsPage extends React.Component {
     this.setState({
       splittedRecipeInstructions: splitted,
     });
+<<<<<<< HEAD
   }
+=======
+  } 
+>>>>>>> 7eb1334f642eb602ee5721245bc02a97242fc6fb
 
   render() {
     const recipe = this.state.recipe;
@@ -45,6 +56,7 @@ class RecipeDetailsPage extends React.Component {
 
     return (
       <>
+<<<<<<< HEAD
         <SearchBar />
 
         {/* <HeaderRecipeDetails data={recipe} /> */}
@@ -52,6 +64,11 @@ class RecipeDetailsPage extends React.Component {
         <RecipeDetails data={recipeObj} />
         <ReactPlayer url={recipe.strYoutube} />
         <Footer />
+=======
+        <HeaderRecipeDetails data={recipeObj} />
+        <RecipeDetails data={recipeObj} />
+        <ReactPlayer url={recipe.strYoutube} />
+>>>>>>> 7eb1334f642eb602ee5721245bc02a97242fc6fb
       </>
     );
   }
