@@ -11,7 +11,13 @@ import RecipeDetailsPage from "./Pages/DetailsRecipe";
 
 // const ExampleContext = React.createContext('light'); // test
 
+import { useHistory } from "react-router-dom";
+
 function App() {
+  // let history = useHistory();
+  let history = useHistory();
+  console.log(`history: `, history);
+
   return (
     <div className="App">
       <Router>
@@ -25,13 +31,16 @@ function App() {
         </ul>
 
         <Switch>
-        <Route exact path="/recipe-details" component={RecipeDetailsPage}>
+          <Route exact path="/recipe-details" component={RecipeDetailsPage}>
             {/* <ExampleContext.Provider value={"hey"}> */}
-              {/* <HeaderRecipeDetails />
+            {/* <HeaderRecipeDetails />
               <RecipeDetails /> */}
-              
-              {/* {this.value} */}
+
+            {/* {this.value} */}
             {/* </ExampleContext.Provider> */}
+          </Route>
+          <Route exact path="/category/categoryName">
+            Category (this.state?)
           </Route>
           <Route path="/">Homepage</Route>
         </Switch>
