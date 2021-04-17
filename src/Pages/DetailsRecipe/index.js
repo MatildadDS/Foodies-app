@@ -28,7 +28,6 @@ class RecipeDetailsPage extends React.Component {
       recipe: response.data.meals[0],
     });
     let splitted = this.state.recipe.strInstructions.split(".");
-    // let splitted = ["test"];
 
     this.setState({
       splittedRecipeInstructions: splitted,
@@ -48,7 +47,8 @@ class RecipeDetailsPage extends React.Component {
       <>
         <SearchBar />
 
-        <HeaderRecipeDetails data={recipe} />
+        {/* <HeaderRecipeDetails data={recipe} /> */}
+        <HeaderRecipeDetails data={recipeObj} />
         <RecipeDetails data={recipeObj} />
         <ReactPlayer url={recipe.strYoutube} />
         <Footer />
