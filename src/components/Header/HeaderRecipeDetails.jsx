@@ -1,11 +1,13 @@
 import React from "react";
 import "./HeaderRecipeDetails.scss";
-class HeaderRecipeDetails extends React.Component {
+// import { useHistory } from "react-router-dom";
 
+import { useHistory } from "react-router-dom";
+
+class HeaderRecipeDetails extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.state = {};
 
     // this.handleRedirectionToCategory = this.handleRedirectionToCategory.bind(this);
   }
@@ -13,6 +15,11 @@ class HeaderRecipeDetails extends React.Component {
   render() {
     const recipe = this.props.data.recipe;
     console.log(recipe);
+
+    // function handleClick() {
+    //   history.push(`/category${this.props.data.recipe}`);
+    // }
+
     return (
       <header className="header-recipe-details">
         <div className="">
@@ -23,6 +30,7 @@ class HeaderRecipeDetails extends React.Component {
         <h2>
           Category:{" "}
           {/* <a href="" onClick={() => this.handleRedirectionToCategory()}> */}
+          {/* <a href="" onClick={history.push(`category/${this.props.data.recipe}`)}> */}
           <a href="" onClick={undefined}>
             {recipe.strCategory}
           </a>
