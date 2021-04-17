@@ -69,7 +69,7 @@ function App() {
         </ul>
 
         <Switch>
-          <Route exact path="/recipe-details" component={RecipeDetailsPage}>
+        <Route exact path="/recipe-details" component={RecipeDetailsPage}>
             {/* <ExampleContext.Provider value={"hey"}> */}
               {/* <HeaderRecipeDetails />
               <RecipeDetails /> */}
@@ -77,7 +77,7 @@ function App() {
               {/* {this.value} */}
             {/* </ExampleContext.Provider> */}
           </Route>
-          <Route path="/">CONTENTS OF Homepage</Route>
+          <Route path="/">Homepage</Route>
         </Switch>
       </Router>
 
