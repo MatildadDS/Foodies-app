@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import SearchBar from "../../components/Navbar/SearchBar"
 import logo from "../../logo.svg"
 import { NavLink } from "react-router-dom";
@@ -11,16 +10,17 @@ function Navbar() {
         <div className="fullnav">
             <nav>
                 <NavLink exact activeClassName="current" to="/Favoris">
-                    Favoris</NavLink>
+                    Home</NavLink>
                 <NavLink exact activeClassName="current" to="/Categories">
                     Categories
                 </NavLink>
                 <NavLink exact activeClassName="current" to="/RecipesByCountries">
                     Countries
                 </NavLink>
-                <NavLink exact activeClassName="current" to="/RecipesByIngredients">
-                    Ingredients
+                <NavLink exact activeClassName="current" to="/Favoris">
+                    Favoris
                 </NavLink>
+
             </nav >
             <SearchBar />
             <div className="suitenav">

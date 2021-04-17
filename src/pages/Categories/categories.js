@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-
-import SearchBar from "../../components/Navbar/SearchBar";
-import Footer from '../../components/Footer/footer';
 import "./styles/categories.scss";
-
 
 class CategorieContent extends Component {
     constructor() {
@@ -28,12 +24,12 @@ class CategorieContent extends Component {
             <div>
 
                 <div className="all-categories">
-
-                <h2 className="categorie-title">Find a recipe by categories</h2>
+                    <h2 className="categorie-title">Find a recipe by categories</h2>
+                    
                     <div className="categorie-list">
-                        <ul>{categories.map((categorie, index) =>
+                       <a href="./RecipesByCategories"><ul>{categories.map((categorie, index) =>
                             <li key={index}> {categorie.strCategory} </li>
-                        )}</ul>
+                        )}</ul></a> 
                     </div>
 
                 </div>
