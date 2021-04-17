@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import SearchBar from "../../components/Navbar/SearchBar"
 import Footer from '../../components/Footer/footer';
 import "./styles/homepage.scss";
 import CategorieContent from '../Categories/categories';
