@@ -2,9 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import '../rundomRecipie/rundom.scss'
 
-import {
-    BrowserRouter as useParams
-  } from "react-router-dom";
+import {BrowserRouter as Router, Switch,Route,Link} from 'react-router-dom'
 import Title from '../Titles'
 
 class Rundom extends React.Component{
@@ -45,7 +43,15 @@ class Rundom extends React.Component{
                           <div className="RundomRecipie" >
                                 <h2> {item.strMeal}</h2> 
                                 <img className="rundomImg" src={item.strMealThumb}></img>
-                                <button onClick={() =>  window.location.href='/Recipes/'+ item.strMeal}> Read the recipie</button>
+                                <p className="Instructions">{item.strInstructions}
+                                </p>
+                               
+                                <a className="ReadMore" onClick={() => 
+                                    
+                                    window.location.href='/RecipiDétail/'+ item.idMeal
+                                    
+                                    } > ...Read the recipie</a>
+                              
                            </div>
                 
                           

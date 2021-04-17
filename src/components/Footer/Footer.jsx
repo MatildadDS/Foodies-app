@@ -2,6 +2,12 @@ import React from 'react'
 import facbook from './Facebook.svg'
 import instgram from './instgram.svg'
 import twitter from './twitter.svg'
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Switch,
+} from 'react-router-dom';
 
 class Footer extends React.Component{
     render(){
@@ -19,9 +25,10 @@ class Footer extends React.Component{
                     </section>
                               <section className="secondSection">
                                     <ul>
-                                      <li className="list"><a className="herf" href="#"> Hero</a></li>
-                                      <li className="list"><a   className="herf" href="#"> Home</a> </li>
-                                      <li className="list"> <a  className="herf" href="#">Recipes</a></li>
+                                      <li className="list"><Link to="/home">Home </Link> </li>
+                                      <li className="list"> <Link to="/catégories">Catégories </Link></li>
+                                      <li className="list"> <Link to="/Areas">Meals by Areas  </Link></li>
+                                      <li className="list"> <a className="herf" href="#">Recipes</a></li>
                                     </ul>
                                     <div className="likns">
                                       <img className="img" src={facbook} alt="facebook"></img>
