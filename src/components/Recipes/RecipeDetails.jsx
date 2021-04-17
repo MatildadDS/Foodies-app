@@ -34,9 +34,14 @@ class RecipeDetails extends React.Component {
    componentDidMount() {
     // const id = this.props.match.params.id;
 
+
+    setTimeout(() => {
+  
     this.setState({
-      splittedRecipeInstructions: this.props.data.splittedRecipeInstructions
+      splittedRecipeInstructions: this.props.data.splittedRecipeInstructions, 
     })
+
+  }, 1000);
     // this.setState({
     //   splittedRecipeInstructions: this.props.splittedRecipeInstructions,
     // });
