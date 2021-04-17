@@ -11,7 +11,7 @@ class HeaderRecipeDetails extends React.Component {
           <img src="" alt={recipe.area} />
         </div>
         <h2>Category: <a href="" onClick={undefined}>{recipe.strCategory}</a></h2>
-        <p>Tags: {recipe.strTags}</p>
+        <p>Tags: <a href="">{recipe.strTags}</a></p>
       </header>
     );
   }
