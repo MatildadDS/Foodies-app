@@ -1,21 +1,61 @@
-import React from 'react'
-import Footer from '../../components/Footer'
-import Title from '../../components/Titles'
+import React from "react";
+import axios from "axios";
 
-import {
-    BrowserRouter as useParams
-  } from "react-router-dom";
-function Recipes (props){
-        let  id  = props.useParams;
-        console.log(id)
-        return <div>
-         <div>
-             <Title text="name of récipes"/>
-             <img alt="recipiImg"/>
-             <p>déscription.....</p>
-             <button> add to favorite</button>
-             </div>
-            <Footer/>
-        </div>
+
+
+
+class Recipies extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            Recipies:[],
+            isLoaded:false
+        }
     }
-export default Recipes 
+
+     componentDidMount () {
+        const Category = this.props.match.params.Category;
+         axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${Category}`)
+         .then(response=>{
+            this.setState({
+                isLoaded:true,
+                Recipies:response.data,
+            })
+        })
+    }
+
+    render () {
+        var{isLoaded,Recipies}=this.state;
+        console.log(Recipies)
+        if(!isLoaded){
+            return <div> lodding...</div>
+        }else{
+        return  <div className="rundomContainer" >
+           
+            
+        <h2 > Rundom meal</h2>
+        <div className="rundomCard">
+         {Recipies.meals.map(item=>(
+            
+                      <div className="RundomRecipie" >
+                            <h2> {item.strMeal}</h2> 
+                            <img className="rundomImg" src={item.strMealThumb}></img>
+                            <a className="ReadMore" onClick={() => 
+                                
+                                window.location.href='/RecipiDétail/'+ item.idMeal
+                                
+                                } > ...Read the recipie</a>
+                          
+                       </div>
+            
+                      
+     ))}
+   </div>
+    
+   
+    </div>
+        }
+    }
+}
+
+export default Recipies;

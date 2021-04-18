@@ -3,7 +3,7 @@ import './App.scss'
 import Footer from './components/Footer'
 import Hero from './Pages/Hero'
 import HomePage from './Pages/Homepage'
-import Recipes from './Pages/Recipes'
+import Recipies from './Pages/Recipes'
 import RecipiDétail from './Pages/DetailsRecipe'
 import Catégories from './components/catégories'
 import Areas from './components/Areas'
@@ -18,7 +18,7 @@ function App() {
 <Route  exact path="/homePage" component={HomePage}/>
 <Route  exact path="/catégories" component={Catégories}/>
 <Route  exact path="/Areas" component={Areas}/>
-<Route exact path="Recipises/:id" component={Recipes} />
+<Route exact path="/Recipises/:Category" component={Recipies} />
 {/* .................. */}
 <Route exact path={ "/RecipiDétail/:id"
   } component={RecipiDétail}/>

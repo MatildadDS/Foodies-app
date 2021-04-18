@@ -37,7 +37,7 @@ class Areas extends React.Component{
                                {Areas.meals.map(item=>(
                 
                              <h2 className="AreasNames"  onClick={() =>  window.location.href='/Recipes/'+item.strArea}>
-                                            {item.strArea}</h2>
+                                    Recipies from  {item.strArea}</h2>
      
                                     ))}
                         </div>
