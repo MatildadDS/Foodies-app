@@ -3,6 +3,7 @@ import Hero from './pages/Hero/hero';
 import HomeContent from './pages/Homepage/homepage';
 import RecipesByCountries from './pages/RecipesByCountries';
 import Categories from './pages/Categories/categories';
+import Countries from './pages/Countries/countries';
 import RecipesByCategories from './pages/RecipesByCategories';
 import RecipesByIngredients from './pages/RecipesByIngredients';
 import DetailsRecipe from './pages/DetailsRecipe';
@@ -24,6 +25,7 @@ function App() {
           <Route path="/RecipesByCountries" exact component={RecipesByCountries} />
           <Route path="/RecipesByCategories" exact component={RecipesByCategories} />
           <Route path="/Categories" exact component={Categories} />
+          <Route path="/Countries" exact component={Countries} />
           <Route path="/RecipesByIngredients" exact component={RecipesByIngredients} />
           <Route path="/DetailsRecipes" exact component={DetailsRecipe} />
           <Route path="/Favoris" exact component={Favoris} />
