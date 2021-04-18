@@ -4,7 +4,7 @@ import axios from "axios";
 
 
 
-class Recipies extends React.Component {
+class RecipiesByAreas extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -14,8 +14,8 @@ class Recipies extends React.Component {
     }
 
      componentDidMount () {
-        const Category = this.props.match.params.Category;
-         axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${Category}`)
+        const Area = this.props.match.params.Area;
+         axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${Area}`)
          .then(response=>{
             this.setState({
                 isLoaded:true,
@@ -58,4 +58,4 @@ class Recipies extends React.Component {
     }
 }
 
-export default Recipies;
+export default RecipiesByAreas;

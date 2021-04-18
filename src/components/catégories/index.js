@@ -39,7 +39,7 @@ class Catégories extends React.Component{
             <div className="container">
              {catégories.categories.map(item=>(
                 
-                          <div className="categories" onClick={() =>  window.location.href='/Recipises/'+ item.strCategory}>
+                          <div className="categories" onClick={() =>  window.location.href='/Recipises/category/'+ item.strCategory}>
                                 <p>  Recipies of {item.strCategory}</p> 
                                 <img className="catégoryImg" src={item.strCategoryThumb}></img>
                            </div>
