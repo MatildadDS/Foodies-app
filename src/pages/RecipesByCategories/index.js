@@ -8,27 +8,31 @@ class RecipesByCategories extends Component {
         super()
         this.state = {
             recipes: [],
+            categorie: "chicken",
         }
     }
 
     async componentDidMount() {
-        const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef`);
-        console.log(response);
-        this.setState({ meals: response.data.recipes });
+        const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${this.state.categorie}`);
+        //console.log(response);
+        this.setState({ recipes: response.data.meals });
+        console.log(response.data.meals);
     }
 
 
     render() {
         const recipes = this.state.recipes;
+        console.log(recipes);
         return (
             <div>
 
+                <h2 className="recipes-by-categorie">Find a recipe by categories</h2>
+
                 <div className="all-recipesbycategories">
-                    <h2 className="recipes-by-categorie">Find a recipe by categories</h2>
 
                     <div className="recipes-list">
                        <ul>{recipes.map((recipe, index) =>
-                            <li key={index}> {recipe.strMeal} {recipe.strMealThumb}</li>
+                            <li key={index}> {recipe.strMeal} <img src={recipe.strMealThumb}></img></li>
                         )}</ul>
                     </div>
 

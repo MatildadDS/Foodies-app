@@ -20,18 +20,20 @@ class CategorieContent extends Component {
 
     render() {
         const categories = this.state.categories;
+
         return (
             <div>
 
-                <div className="all-categories">
-                    <h2 className="categorie-title">Find a recipe by categories</h2>
+                <h2 className="categorie-title">Find a recipe by categories</h2>
                     
+                <div className="all-countries">
+
                     <div className="categorie-list">
-                       <a href="./RecipesByCategories"><ul>{categories.map((categorie, index) =>
+                        <a href="./RecipesByCategories"><ul>{categories.map((categorie, index) =>
                             <li key={index}> {categorie.strCategory} </li>
                         )}</ul></a> 
                     </div>
-
+                    
                 </div>
 
             </div>
