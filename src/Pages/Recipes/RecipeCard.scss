@@ -1,0 +1,22 @@
+.RecipeCardsContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    
+}
+.RecipeCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+    width: 20%;
+    height: 300px;
+    margin-left: 5%;
+    border: 2px solid black;
+}
+.RecipeCardImg{
+    width: 40%;
+}

@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 
 
-
+import '../../../Pages/Recipes/RecipeCard.scss'
 
 class RecipiesCatégory extends React.Component {
     constructor(props) {
@@ -33,13 +33,13 @@ class RecipiesCatégory extends React.Component {
         return  <div className="rundomContainer" >
            
             
-        <h2 > Rundom meal</h2>
-        <div className="rundomCard">
+        
+        <div className="RecipeCardsContainer">
          {Recipies.meals.map(item=>(
             
-                      <div className="RundomRecipie" >
+                      <div className="RecipeCard" >
                             <h2> {item.strMeal}</h2> 
-                            <img className="rundomImg" src={item.strMealThumb}></img>
+                            <img className="RecipeCardImg" src={item.strMealThumb}></img>
                             <a className="ReadMore" onClick={() => 
                                 
                                 window.location.href='/RecipiDétail/'+ item.idMeal
