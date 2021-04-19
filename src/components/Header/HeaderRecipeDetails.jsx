@@ -1,8 +1,12 @@
 import React from "react";
 import "./HeaderRecipeDetails.scss";
-// import { useHistory } from "react-router-dom";
 
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+// import RecipesByCategories from "./pages/RecipesByCategories";
+// import RecipesByCategories from "../../pages/RecipesByCategories/";
+import RecipesByCategory from "../../pages/RecipesByCategory/";
+
 
 class HeaderRecipeDetails extends React.Component {
   constructor(props) {
@@ -10,11 +14,16 @@ class HeaderRecipeDetails extends React.Component {
     this.state = {};
 
     // this.handleRedirectionToCategory = this.handleRedirectionToCategory.bind(this);
+
+    // this.props.history.push({
+    //   pathname: `category/test`,
+    //     state: this.state.recipe.strCategory,
+    // })
   }
 
   render() {
     const recipe = this.props.data.recipe;
-    console.log(recipe);
+    // console.log(recipe);
 
     // function handleClick() {
     //   history.push(`/category${this.props.data.recipe}`);
@@ -31,12 +40,35 @@ class HeaderRecipeDetails extends React.Component {
           Category:{" "}
           {/* <a href="" onClick={() => this.handleRedirectionToCategory()}> */}
           {/* <a href="" onClick={history.push(`category/${this.props.data.recipe}`)}> */}
-          <a href="" onClick={undefined}>
+          {/* <Link
+            to={{
+              pathname: `category/${recipe.strCategory}`,
+              state: recipe.strCategory
+            }}
+          >
             {recipe.strCategory}
-          </a>
+          </Link> */}
+          <Router>
+            <Link to={`RecipesByCategory`}>{recipe.strCategory}</Link>
+            {/* <Link to={`category/${recipe.strCategory}`}>{recipe.strCategory}</Link> */}
+            <Route
+              path="/RecipesByCategory/:category"
+              exact
+              component={RecipesByCategory}
+            />
+          </Router>
+          {/* <Link
+            to={{ pathname: `/cards/${id}`, state: id }}
+            className={`card-wrapper restore-${id}`}
+          >
+            {cardData[id].name}
+          </Link> */}
+          {/* <a href={`category/${recipe.strCategory}`} onClick={undefined}>
+              {recipe.strCategory}
+            </a> */}
         </h2>
         <p>
-          Tags: <a href="">{recipe.strTags}</a>
+          Tags: <a href={`tags/${recipe.strTags}`}>{recipe.strTags}</a>
         </p>
       </header>
     );

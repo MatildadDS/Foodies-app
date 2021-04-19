@@ -3,6 +3,10 @@ import axios from "axios";
 import RecipeDetailsService from "../../services/recipeDetails";
 import api from "../../utils/api";
 
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
+
 // e.preventDefault
 class RecipeDetails extends React.Component {
   constructor(props) {
@@ -12,8 +16,9 @@ class RecipeDetails extends React.Component {
       splittedRecipeInstructions: ["Loading"],
       error: {},
       categories: {},
-
-      category: {},
+      test: null,
+      // category: {},
+      category: "",
     };
 
     // this.displayIngredients = this.displayIngredients.bind(this);
@@ -37,19 +42,22 @@ class RecipeDetails extends React.Component {
     // const category = categoryResponse.results;
     const categories = this.state.categories.categories;
 
-    console.log(`reponse: `, categories);
+    // console.log(`reponse: `, categories);
 
     const categoryResponse = await RecipeDetailsService.getOneCategory(
       "Seafood"
     ).then((response) => this.setState({ category: response.data }));
     const category = this.state.category;
 
-    console.log(`category: `, category);
+    // console.log(`category: `, category);
 
     // axios.get('https://api.npms.io/v2/search?q=react')
     //     .then(response => this.setState({ totalReactPackages: response.data.total }));
 
     // }, 2000);
+
+    // console.log(`this.props.data:`, this.props.data);
+    // //this.props.nomDeVariable
   }
 
   // async componentDidMount() {
@@ -69,6 +77,10 @@ class RecipeDetails extends React.Component {
 
     return (
       <section>
+        {/* <button onClick={() => makeAPIcall(this.state.category)}>
+          REDIRECT TO CATEGORY
+        </button> */}
+        {/* this.state.category */}
         <figure>
           <img src={recipe.strMealThumb} alt={recipe.strMeal} />
         </figure>
@@ -80,17 +92,26 @@ class RecipeDetails extends React.Component {
           ))}
         </ul>
         <h3>Ingredients</h3>
+
+        <Router>
+
+
         {Object.keys(recipe).map((keyName, index) =>
           keyName !== "" ? (
             keyName.includes("strIngredient") ? (
               keyName !== "" ? (
                 <div key={index}>
-                  <a href="">{recipe[keyName]}</a>
+                  {/* <a href={`ingredient/${recipe[keyName]}`}>{recipe[keyName]}</a> */}
+                  <Link to={`ingredient/${recipe[keyName]}`}>{recipe[keyName]}</Link>
+
+
                 </div>
               ) : null
             ) : null
           ) : null
         )}
+
+</Router>
         <h3>Measures</h3>
 
         <ul>
@@ -110,6 +131,18 @@ class RecipeDetails extends React.Component {
       </section>
     );
   }
+}
+
+function makeAPIcall(category) {
+  // category = "category"
+  // let resultOfCall = RecipeDetailsService.getOneCategory(category)
+  let apiResponse = RecipeDetailsService.getOneCategory(category)
+
+  console.log(`redirect to: CATEGORY`);
+  console.log(apiResponse);
+
+  // console.log(apiResponse);
+  // console.log(resultOfCall);
 }
 
 export default RecipeDetails;
