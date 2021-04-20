@@ -37,7 +37,7 @@ class Rundom extends React.Component{
            
             
             <h2 > Rundom meal</h2>
-            <div className="rundomCard">
+           
              {rundom.meals.map(item=>(
                 
                           <div className="RundomRecipie" >
@@ -59,7 +59,7 @@ class Rundom extends React.Component{
        </div>
         
        
-        </div>
+     
         
     }
      
