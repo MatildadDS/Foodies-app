@@ -1,0 +1,24 @@
+.DetailsContainer{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid grey;
+    
+}
+.flexRow{
+    display: flex;
+    flex-direction: row;
+   
+}
+.imgAndTitle{
+  width: auto;
+    padding-left: 5%;
+}
+.DtailsImg{
+    width: 50%;
+   
+    box-shadow: 3px 5px grey;
+}
+.DetailInstractions{
+    width: 30%;
+
+}

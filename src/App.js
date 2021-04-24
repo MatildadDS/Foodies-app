@@ -7,6 +7,7 @@ import RecipiesCatégory from './Pages/Recipes/RecipiesByCatégory'
 import RecipiesByAreas from './Pages/Recipes/RecipiesByAreas'
 import RecipiDétail from './Pages/DetailsRecipe'
 import Catégories from './components/catégories'
+import MyFavorite from './Pages/MyFavorite/MyFavorite'
 import Areas from './components/Areas'
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom'
 
@@ -19,6 +20,7 @@ function App() {
 <Route  exact path="/homePage" component={HomePage}/>
 <Route  exact path="/catégories" component={Catégories}/>
 <Route  exact path="/Areas" component={Areas}/>
+<Route exact path='/MyFavorite' component={MyFavorite}/>
 <Route exact path="/Recipises/category/:Category" component={RecipiesCatégory} />
 <Route exact path="/Recipises/Area/:Area" component={RecipiesByAreas} />
 {/* .................. */}

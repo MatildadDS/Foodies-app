@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import SearchBox from '../../../components/Navbar/SearchBox'
 import '../../../Pages/Recipes/RecipeCard.scss'
+import AddFavoritesButton from '../../../components/Buttons/AddFavoritesButton'
 
 class RecipiesCatégory extends React.Component {
     constructor(props) {
@@ -27,13 +28,17 @@ class RecipiesCatégory extends React.Component {
     render () {
         var{isLoaded,Recipies,searchField}=this.state;
         console.log(Recipies)
+      
+      
+
+        // returnnning sata
         if(!isLoaded){
             return <div> lodding...</div>
         }else{
          
             
         return  <div>
-           
+           <p onClick={() =>  window.location.href='/MyFavorite'}>go to MyFavorite</p>
            <SearchBox placeholder="Search the name of meal"
         handelChange={(e)=>this.setState({
      searchField:e.target.value})
@@ -58,7 +63,12 @@ class RecipiesCatégory extends React.Component {
                                 window.location.href='/RecipiDétail/'+ item.idMeal
                                 
                                 } > ...Read the recipie</a>
-                          
+                                
+                          <AddFavoritesButton
+                          RecipieId={item.idMeal}
+                           RecipieName={item.strMeal}
+                           RecipImg={item.strMealThumb}
+                           />
                        </div>
             
                       

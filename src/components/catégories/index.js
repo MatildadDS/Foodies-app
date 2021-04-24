@@ -39,7 +39,7 @@ class Catégories extends React.Component{
                   console.log(catégories)
                  console.log(this.state.searchField)
        
-               return <div>
+               return <div className="catégories">
               <SearchBox placeholder="Search by catégory"
                       handelChange={(e)=>this.setState({
                    searchField:e.target.value})

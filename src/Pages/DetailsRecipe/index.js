@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-
+import './Details.scss'
 
 class RecipeDetail extends React.Component {
     constructor(props) {
@@ -30,22 +30,29 @@ class RecipeDetail extends React.Component {
             return <div> lodding...</div>
         }else{
         return (
-            <div className="DetailsContainer" >
+            <div>
            
-            
-            
-            <div className="DetailsCard">
              {RecipieData.meals.map(item=>(
-                
-                          <div className="Details" >
-                                <h2> {item.strMeal}</h2> 
-                                <img  src={item.strMealThumb}></img>
-                                <p >{item.strInstructions}</p>
-                           </div>
-                
-                          
+                <div className="DetailsContainer">
+                        <div className="flexRow">
+                                    <div className="imgAndTitle" >
+                                             <h2> {item.strMeal}</h2> 
+                                               <img className="DtailsImg" src={item.strMealThumb}></img>
+                                    </div>
+                                              <div className="DetailInstractions">
+                                                  <h2>Instructions</h2>
+                                                   <p>{item.strInstructions}</p>
+                                                </div>
+                        </div>
+                        <div>
+                            <h2>  The védio of the recipe</h2>
+                            <video src={item.strYoutube}></video>
+                        </div>
+
+                 </div> 
+                           
          ))}
-       </div>
+      
         
        
         </div>
