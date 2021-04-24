@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-
+import SearchBox from '../../../components/Navbar/SearchBox'
+import Rundom from '../../../components/rundomRecipie'
 import '../../../Pages/Recipes/RecipeCard.scss'
 
 
@@ -9,7 +10,8 @@ class RecipiesByAreas extends React.Component {
         super(props)
         this.state = {
             Recipies:[],
-            isLoaded:false
+            isLoaded:false,
+            searchField:''
         }
     }
 
@@ -25,33 +27,43 @@ class RecipiesByAreas extends React.Component {
     }
 
     render () {
-        var{isLoaded,Recipies}=this.state;
+        var{isLoaded,Recipies,searchField}=this.state;
         console.log(Recipies)
         if(!isLoaded){
             return <div> lodding...</div>
         }else{
-        return  <div className="rundomContainer" >
-           
-            
-        
+
+        return  <div>
+               <SearchBox placeholder="Search the name of meal"
+        handelChange={(e)=>this.setState({
+     searchField:e.target.value})
+
+   } />
         <div className="RecipeCardsContainer">
-         {Recipies.meals.map(item=>(
+       
+         {Recipies.meals.filter(
+             item=>{
+                 return item.strMeal.toLowerCase().includes(searchField.toLocaleLowerCase())
+             }
+         ).map(item=>(
             
                       <div className="RecipeCard" >
-                            <h2>  {item.strMeal}</h2> 
                             <img className="RecipeCardImg" src={item.strMealThumb}></img>
+                            <h2>  {item.strMeal}</h2> 
                             <a className="ReadMore" onClick={() => 
                                 
                                 window.location.href='/RecipiDétail/'+ item.idMeal
                                 
                                 } > ...Read the recipie</a>
                           
+                         
                        </div>
             
-                      
+            
      ))}
-   </div>
     
+   </div>
+   
    
     </div>
         }

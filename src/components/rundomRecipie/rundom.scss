@@ -1,45 +1,42 @@
 .rundomContainer{
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-right: 2%;
-    background-color: rgb(161, 160, 155);
+    width: 100%;
     border: 2px solid black;
-    color: black;
- 
+    background-color: rgb(181, 206, 207);
 }
-.rundomCard{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-   
-    
-}
+
 .rundomImg{
-    width: 50%;
+   width: 50%;
+   max-width: 80%;
     height: 20%;
     border: black 2px solid;
     border-radius: 20px;
     box-shadow: 2px 5px rgb(82, 81, 79) ;
 }
-.rundomStruction{
-    
-    font-size: 20px;
-    font-weight: bold;
-}
+
 .RundomRecipie{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+width: 100%;
+   
+    margin-bottom: 5%;
+ 
+   background-color: rgba(180, 201, 202, 0.52);;
+   
+    color: black;
+}
+.text{
+    padding-left: 5%;
 }
 .Instructions{
     width:80%;
-   
+  padding-bottom: 5%;
     height: 50px;
     overflow: hidden;
 }
 .ReadMore{
+   
     font-weight: bold;
     margin-bottom: 10%;
 }

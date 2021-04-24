@@ -40,9 +40,11 @@ class Rundom extends React.Component{
            
              {rundom.meals.map(item=>(
                 
-                          <div className="RundomRecipie" >
+                <div className="RundomRecipie">
+                              <img className="rundomImg" src={item.strMealThumb}></img>
+                              <div className="text">
                                 <h2> {item.strMeal}</h2> 
-                                <img className="rundomImg" src={item.strMealThumb}></img>
+                                
                                 <p className="Instructions">{item.strInstructions}
                                 </p>
                                
@@ -51,11 +53,13 @@ class Rundom extends React.Component{
                                     window.location.href='/RecipiDétail/'+ item.idMeal
                                     
                                     } > ...Read the recipie</a>
+                        </div>
                               
                            </div>
-                
+               
                           
          ))}
+   
        </div>
         
        

@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import '../catégories/catégories.scss'
+import Rundom from '../rundomRecipie'
+import SearchBox from '../Navbar/SearchBox'
 
 import {
     BrowserRouter as useParams
@@ -12,7 +14,8 @@ class Catégories extends React.Component{
         super(props);
         this.state={
             catégories: [],
-            isLoaded:false
+            isLoaded:false,
+            searchField:''
         }
     }
     componentDidMount(){
@@ -26,31 +29,42 @@ class Catégories extends React.Component{
        
 }
     render(){
-        var{isLoaded,catégories}=this.state;
-    if(!isLoaded){
-        return <div> lodding...</div>
-    }else{
+        var{isLoaded,catégories,searchField}=this.state;
+    
+        
+            if(!isLoaded){
+                   return <div> lodding...</div>
+            }else{
+      
+                  console.log(catégories)
+                 console.log(this.state.searchField)
        
-        console.log(catégories)
-        return <div>
-           
+               return <div>
+              <SearchBox placeholder="Search by catégory"
+                      handelChange={(e)=>this.setState({
+                   searchField:e.target.value})
+          
+                 } />
             
-            <h2> Our Categories</h2>
-            <div className="container">
-             {catégories.categories.map(item=>(
+           
+                
+                    <h2> Our Categories</h2>
+                    <div className="container">
+                       {catégories.categories.filter(item=>{
+                      return item.strCategory.toLowerCase().includes(searchField.toLowerCase());
+                                     }).map(item=>(
                 
                           <div className="categories" onClick={() =>  window.location.href='/Recipises/category/'+ item.strCategory}>
+                              <img className="catégoryImg" src={item.strCategoryThumb}></img>
                                 <p>  Recipies of {item.strCategory}</p> 
-                                <img className="catégoryImg" src={item.strCategoryThumb}></img>
+                                
                            </div>
                 
                           
-         ))}
-       </div>
-        
-       
-        </div>
-        
+                       ))}
+                    
+                    </div>
+             </div>  
     }
      
 }

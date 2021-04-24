@@ -1,4 +1,4 @@
-import  {DropDownMenu,Search } from '../../components/Navbar';
+
 import './Hero.scss'
 import '../../components/Footer/Footer.scss'
 import React from 'react'
@@ -6,8 +6,7 @@ import React from 'react'
 class Hero extends React.Component{
     render(){
         return <div>
-            <DropDownMenu />
-         <Search/>
+           
             <div className="container">
             <h1>Foodies</h1>
             <p>of type and scrambled it to make a type specimen

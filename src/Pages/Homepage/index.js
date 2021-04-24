@@ -4,7 +4,8 @@ import Rundom from '../../components/rundomRecipie'
 import Title from '../../components/Titles'
 import Areas from '../../components/Areas'
 import Hero from '../Hero'
-import '../../Pages/Homepage/HomePage.scss'
+
+import SearchBox from '../../components/Navbar/SearchBox'
 
 class HomePage extends React.Component{
    
@@ -13,17 +14,18 @@ class HomePage extends React.Component{
     
        
        
-        return <div>
-            <Title text="Feedies"/>
-            <div className="flex">
+        return  <div>
+            
+                         <Title text="Feedies"/>
+                      
            
-      <Catégories/>
-      <Rundom/>
-      </div>
+                              <Catégories/>
+                            
+             <Rundom/>
      
-      <Areas/>
+                           <Areas/>
        
-        </div>
+                        </div>
         
     }
      

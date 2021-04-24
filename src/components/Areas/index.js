@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import '../Areas/Areas.scss'
+import SearchBox from '../Navbar/SearchBox'
 import {
     BrowserRouter as useParams
   } from "react-router-dom";
@@ -11,7 +12,8 @@ class Areas extends React.Component{
         super(props);
         this.state={
             Areas: [],
-            isLoaded:false
+            isLoaded:false,
+            searchField:''
         }
     }
     componentDidMount(){
@@ -25,16 +27,27 @@ class Areas extends React.Component{
        
 }
     render(){
-        var{isLoaded,Areas}=this.state;
+        var{isLoaded,Areas,searchField}=this.state;
     if(!isLoaded){
         return <div> lodding...</div>
     }else{
        
         console.log(Areas)
         return <div className="Areas">
+            {/* pour search bar */}
+             <SearchBox placeholder="Search by Areas"
+                      handelChange={(e)=>this.setState({
+                   searchField:e.target.value})
+          
+                 } />
                            <h2> Our Areas</h2>
                         <div className="container">
-                               {Areas.meals.map(item=>(
+                               {Areas.meals.filter(
+                                   item=>{
+                                       return item.strArea.toLowerCase().includes(searchField.toLowerCase());
+
+                                   }
+                               ).map(item=>(
                 
                              <h2 className="AreasNames"  onClick={() =>  window.location.href='/Recipises/Area/'+item.strArea}>
                                     Recipies from  {item.strArea}</h2>

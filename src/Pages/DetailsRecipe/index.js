@@ -30,14 +30,14 @@ class RecipeDetail extends React.Component {
             return <div> lodding...</div>
         }else{
         return (
-            <div className="rundomContainer" >
+            <div className="DetailsContainer" >
            
             
             
-            <div className="rundomCard">
+            <div className="DetailsCard">
              {RecipieData.meals.map(item=>(
                 
-                          <div className="RundomRecipie" >
+                          <div className="Details" >
                                 <h2> {item.strMeal}</h2> 
                                 <img  src={item.strMealThumb}></img>
                                 <p >{item.strInstructions}</p>

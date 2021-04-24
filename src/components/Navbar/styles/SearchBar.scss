@@ -1,4 +1,32 @@
-.searchbar input{
-    border: 2px solid grey;
+.searchBox{
+    margin-top: 3%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
+}
+.search{
+    border-radius: 10px;
+    width: 80%;
+    height: 50px;
+    border: 2px solid rgb(66, 68, 66);
+    transition: all 2S;
+    font-size: 1.8em ;
+    &:focus{
+        outline:solid rgb(229, 240, 206) 30px;
+    }
+}
+.serchImg{
+    font-weight: bold;
+    width:180px;
+  height: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+transition: ease-out 0.4s;
+outline: none;
+cursor: pointer;
+position: absolute;
+left:80%;
+-webkit-appearance: none;
+font-size: 1.5em;
 }
