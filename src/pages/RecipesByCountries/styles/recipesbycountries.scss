@@ -1,0 +1,38 @@
+.all-recipesbycountries {
+  padding-top: 100px;
+}
+
+.countries-list {
+  height: fit-content;
+  font-size: 25px;
+  margin: auto;
+
+  ul {
+    left: 0;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    transform: none;
+    padding: 20px;
+    margin: auto;
+    justify-content: center;
+  }
+
+  li {
+    border: 0.5px solid white;
+    padding: 40px;
+    margin: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  img {
+    padding-top: 30px;
+  }
+}

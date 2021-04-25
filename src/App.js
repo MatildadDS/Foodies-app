@@ -72,6 +72,9 @@ function App() {
           />
           <Route path="/Countries" exact component={Countries} />
      
+          <Route path="/RecipesByCategories/:idMeal" exact component={RecipesByCategories} />
+          <Route path="/RecipesByCountries" exact component={RecipesByCountries} />
+          <Route path="/RecipesByIngredients" exact component={RecipesByIngredients} />
           <Route path="/DetailsRecipes" exact component={DetailsRecipe} />
           {/* <Route path="/Favoris" exact component={Favoris} /> */}
           <Route exact path="/MyFavorite" component={MyFavorite} />

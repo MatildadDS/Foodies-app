@@ -1,6 +1,7 @@
 @import "./components/Navbar/styles/SearchBar.scss";
 @import "./Pages/Hero/Hero.scss";
 @import "./components/Footer/Footer.scss";
+@import "components/Navbar/styles/Navbar.scss";
 
 .App-logo {
   height: 5vmin;
@@ -21,25 +22,16 @@
   font-size: calc(10px + 2vmin);
 }
 
-.App-link {
-  color: #080808;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-@import "components/Navbar/styles/Navbar.scss";
+
+
+
 
 body {
   background-image: url(https://source.unsplash.com/random/1920x1080?restaurant);
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
   backdrop-filter: blur(8px);
 }

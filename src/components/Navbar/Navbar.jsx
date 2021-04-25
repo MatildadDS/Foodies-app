@@ -9,7 +9,7 @@ function Navbar() {
     return (
         <div className="fullnav">
             <nav>
-                <NavLink exact activeClassName="current" to="/Favoris">
+                <NavLink exact activeClassName="current" to="/Homepage">
                     Home</NavLink>
                 <NavLink exact activeClassName="current" to="/Categories">
                     Categories

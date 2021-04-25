@@ -8,15 +8,15 @@ class RecipesByCategories extends Component {
         super()
         this.state = {
             recipes: [],
-            categorie: "chicken",
+            categorie: "chicken"
         }
     }
 
     async componentDidMount() {
         const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${this.state.categorie}`);
-        //console.log(response);
+        console.log(response);
         this.setState({ recipes: response.data.meals });
-        console.log(response.data.meals);
+        console.log(response);
     }
 
 
@@ -32,7 +32,7 @@ class RecipesByCategories extends Component {
 
                     <div className="recipes-list">
                        <ul>{recipes.map((recipe, index) =>
-                            <li key={index}> {recipe.strMeal} <img src={recipe.strMealThumb}></img></li>
+                            <li key={index}> {recipe.strMeal}</li>
                         )}</ul>
                     </div>
 
