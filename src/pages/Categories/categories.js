@@ -30,7 +30,7 @@ class CategorieContent extends Component {
 
                     <div className="categorie-list">
                         <a href="./RecipesByCategories"><ul>{categories.map((categorie, index) =>
-                            <li key={index}> {categorie.strCategory} <img src={categorie.strMealThumb} alt="#"></img></li>
+                            <li key={index}> {categorie.strCategory} <img src={categorie.strCategoryThumb} alt="#"></img></li>
                         )}</ul></a> 
                     </div>
                     
