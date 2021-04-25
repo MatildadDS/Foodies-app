@@ -9,6 +9,7 @@ import RecipiDétail from './Pages/DetailsRecipe'
 import Catégories from './components/catégories'
 import MyFavorite from './Pages/MyFavorite/MyFavorite'
 import Areas from './components/Areas'
+import './components/Buttons/Buttons.scss'
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom'
 
 function App() {

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Buttons.scss'
 
 
 class AddFavoritesButton extends React.Component{
@@ -27,7 +27,7 @@ class AddFavoritesButton extends React.Component{
     render() {
         console.log(this.props.onClick)
         return (          
-            <button onClick={() => this.addToFavorite(this.props.RecipieId,this.props.RecipieName,this.props.RecipImg)} className="addButton">
+            <button onClick={() => this.addToFavorite(this.props.RecipieId,this.props.RecipieName,this.props.RecipImg)}  className="ButtonAdd">
                 Add to favorit
                  </button> 
         )

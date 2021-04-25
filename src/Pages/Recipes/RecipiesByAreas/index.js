@@ -3,7 +3,7 @@ import axios from "axios";
 import SearchBox from '../../../components/Navbar/SearchBox'
 import Rundom from '../../../components/rundomRecipie'
 import '../../../Pages/Recipes/RecipeCard.scss'
-
+import AddFavoritesButton from '../../../components/Buttons/AddFavoritesButton'
 
 class RecipiesByAreas extends React.Component {
     constructor(props) {
@@ -55,7 +55,11 @@ class RecipiesByAreas extends React.Component {
                                 window.location.href='/RecipiDétail/'+ item.idMeal
                                 
                                 } > ...Read the recipie</a>
-                          
+                            <AddFavoritesButton
+                          RecipieId={item.idMeal}
+                           RecipieName={item.strMeal}
+                           RecipImg={item.strMealThumb}
+                           />
                          
                        </div>
             

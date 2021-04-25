@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 import SearchBox from '../../components/Navbar/SearchBox'
-
 import '../../Pages/Recipes/RecipeCard.scss'
+import DeleteFavorit from '../../components/Buttons/DeleteFavoritesButton'
 
 class MyFavorite extends React.Component {
     constructor(props) {
@@ -22,9 +22,7 @@ class MyFavorite extends React.Component {
         const MealsImg= localStorage.getItem("RecipImg")
        
         
-      const clear=()=>{
-localStorage.clear()
-      }
+     
 
         return  <div>
             
@@ -39,11 +37,11 @@ localStorage.clear()
                                 window.location.href='/RecipiDétail/'+ MealsId
                                 
                                 } > ...Read the recipie</a>
-                                
+                                <DeleteFavorit > Delete</DeleteFavorit>
                       
                        </div>
                    
-                    <button onClick={clear}> clear</button>
+                    
             
                 
 

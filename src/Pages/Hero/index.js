@@ -15,7 +15,7 @@ centuries, but also the leap into electronic typesetting,
 remaining essentially unchanged. It was po</p>
               
                 
-                <button className="HeroButton" onClick={event =>  window.location.href='/homePage'}> déscouver our recipes</button>
+                <button className="HeroButton" onClick={event =>  window.location.href='/homePage'}> Déscouver our recipes</button>
             </div>
 
             

@@ -1,10 +1,11 @@
 .footer{
     display: flex;
     flex-direction: row;
-    background-color: rgb(226, 219, 212);
+    background-color: rgb(150, 147, 144);
     color: black;
     justify-content: flex-start;
     padding-left: 5%;
+    height: 200px;
 }
 .fristSection{
     display: flex;
@@ -22,6 +23,12 @@
     padding-top: 30%;
 
 }
+.siteTitle{
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
+
+}
 .herf{
     text-decoration: none;
     color: black;
@@ -34,10 +41,15 @@
     
    
 }
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
 .img{
     width:30px;
     padding-top: 30%;
-   padding-left: 30%;
+   padding-left: 15%;
    opacity: 0.4;
    &:hover{
     opacity: 1;

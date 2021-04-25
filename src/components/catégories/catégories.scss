@@ -1,6 +1,4 @@
-.catégories{
-  background-color:#386E72;
-}
+
 .flex{
     display: flex;
     flex-direction: row;
@@ -13,9 +11,9 @@
     text-align: center;
     margin-bottom: 10%;
     margin-left: 5%;
-  box-shadow: 5px 3px  rgba(102, 172, 175, 0.52); ;
+  box-shadow: 5px 3px  rgba(76, 81, 82, 0.52); ;
 
-background-color:#b1d4d6;
+background-color:#6e7a7a;
 height: 200px;
 width: 20%;
 position: relative;
@@ -23,13 +21,16 @@ font-size: 30px;
 text-align: center;
     font-weight:bold;
     transition: all 2s;
+    &:hover{
+     background-color: cadetblue;
+    }
     &:hover .catégoryImg{
        transform: translate(-50%);
 
     }
     
     .catégoryImg{
-     
+     transition: all 3s;
        width: 50%;
        position: absolute;
      bottom: 80%;
