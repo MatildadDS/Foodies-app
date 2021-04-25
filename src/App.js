@@ -22,10 +22,10 @@ function App() {
         <Switch>
           <Route path="/Hero" exact component={Hero} />
           <Route path="/Homepage" exact component={HomeContent} />
-          <Route path="/RecipesByCountries" exact component={RecipesByCountries} />
-          <Route path="/RecipesByCategories" exact component={RecipesByCategories} />
           <Route path="/Categories" exact component={Categories} />
           <Route path="/Countries" exact component={Countries} />
+          <Route path="/RecipesByCategories/:idMeal" exact component={RecipesByCategories} />
+          <Route path="/RecipesByCountries" exact component={RecipesByCountries} />
           <Route path="/RecipesByIngredients" exact component={RecipesByIngredients} />
           <Route path="/DetailsRecipes" exact component={DetailsRecipe} />
           <Route path="/Favoris" exact component={Favoris} />
