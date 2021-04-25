@@ -26,7 +26,7 @@ class MyFavorite extends React.Component {
 
         return  <div>
             
-            <h1> Your favorites  meal are</h1>
+            <h1> Your favorites meal are</h1>
                     
             <div className="RecipeCard" >
                            <img className="RecipeCardImg" src={MealsImg}></img>

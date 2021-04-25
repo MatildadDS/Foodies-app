@@ -14,10 +14,10 @@ function Navbar() {
                 <NavLink exact activeClassName="current" to="/Categories">
                     Categories
                 </NavLink>
-                <NavLink exact activeClassName="current" to="/RecipesByCountries">
+                <NavLink exact activeClassName="current" to="/Areas">
                     Countries
                 </NavLink>
-                <NavLink exact activeClassName="current" to="/Favoris">
+                <NavLink exact activeClassName="current" to="/MyFavorite">
                     Favoris
                 </NavLink>
 

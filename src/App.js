@@ -8,12 +8,13 @@ import RecipesByCountries from "./pages/RecipesByCountries";
 import Categories from "./pages/Categories/categories";
 import RecipesByIngredients from "./pages/RecipesByIngredients";
 import DetailsRecipe from "./Pages/DetailsRecipe";
+// import DetailsRecipe from "./pages/DetailsRecipe";
+import RecipiDétail from "./Pages/DetailsRecipe";
+
 import Favoris from "./pages/Favoris";
 import { Navbar } from "./components/Navbar";
 import RecipiesCatégory from "./Pages/Recipes/RecipiesByCatégory";
 import RecipiesByAreas from "./Pages/Recipes/RecipiesByAreas";
-import RecipiDétail from "./Pages/DetailsRecipe";
-import DetailsRecipe from "./pages/DetailsRecipe";
 
 import Catégories from "./components/catégories";
 import MyFavorite from "./Pages/MyFavorite/MyFavorite";
@@ -23,7 +24,6 @@ import Countries from "./pages/Countries/countries";
 import RecipesByCategories from "./pages/RecipesByCategories";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 
 function App() {
   return (
@@ -42,6 +42,7 @@ function App() {
           <Route exact path="/Areas" component={Areas} />
 
           <Route
+            // path="/RecipesByCountries"
             path="/RecipesByCountries"
             exact
             component={RecipesByCountries}
@@ -72,10 +73,22 @@ function App() {
             component={RecipesByIngredients}
           />
           <Route path="/Countries" exact component={Countries} />
-     
-          <Route path="/RecipesByCategories/:idMeal" exact component={RecipesByCategories} />
-          <Route path="/RecipesByCountries" exact component={RecipesByCountries} />
-          <Route path="/RecipesByIngredients" exact component={RecipesByIngredients} />
+
+          <Route
+            path="/RecipesByCategories/:idMeal"
+            exact
+            component={RecipesByCategories}
+          />
+          <Route
+            path="/RecipesByCountries"
+            exact
+            component={RecipesByCountries}
+          />
+          <Route
+            path="/RecipesByIngredients"
+            exact
+            component={RecipesByIngredients}
+          />
           <Route path="/DetailsRecipes" exact component={DetailsRecipe} />
           {/* <Route path="/Favoris" exact component={Favoris} /> */}
           <Route exact path="/MyFavorite" component={MyFavorite} />
