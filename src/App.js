@@ -1,4 +1,5 @@
 import './App.scss';
+// import Hero from './pages/Hero/hero';
 import Hero from './pages/Hero/hero';
 import HomeContent from './pages/Homepage/homepage';
 import RecipesByCountries from './pages/RecipesByCountries';
@@ -6,7 +7,8 @@ import Categories from './pages/Categories/categories';
 import Countries from './pages/Countries/countries';
 import RecipesByCategories from './pages/RecipesByCategories';
 import RecipesByIngredients from './pages/RecipesByIngredients';
-import DetailsRecipe from './pages/DetailsRecipe';
+// import DetailsRecipe from './pages/DetailsRecipe';
+import DetailsRecipe from './Pages/DetailsRecipe';
 import Favoris from './pages/Favoris';
 import { Navbar } from './components/Navbar';
 

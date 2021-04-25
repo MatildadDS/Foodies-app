@@ -24,7 +24,7 @@ function Navbar() {
             </nav >
             <SearchBar />
             <div className="suitenav">
-                <img src={logo} className="App-logo" alt="logo" />
+                {/* <img src={logo} className="App-logo" alt="logo" /> */}
             </div>
         </div>
     );
