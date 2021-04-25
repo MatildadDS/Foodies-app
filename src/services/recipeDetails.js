@@ -16,6 +16,7 @@ const RecipeDetailsService = {
     // return await api.get(`api/json/v1/1/filter.php?i=${ingredient}`);
     // www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast
   },
+  // www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast
 };
 
 export default RecipeDetailsService;

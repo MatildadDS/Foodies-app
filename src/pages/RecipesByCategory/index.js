@@ -1,16 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import RecipeDetailsService from "../../services/recipeDetails";
 
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link,
-//   useParams,
-// } from "react-router-dom";
-// import "./styles/recipesbycategories.scss";
 
 class RecipesByCategory extends Component {
   // page?
@@ -23,12 +16,12 @@ class RecipesByCategory extends Component {
       category: "",
     };
 
-    // console.log(this.props.location.pathname);
   }
 
   async componentDidMount() {
-    // const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef`);
-    const response = await RecipeDetailsService.getOneCategory(this.props.match.params.category); // get category from url endpoint
+    const response = await RecipeDetailsService.getOneCategory(
+      this.props.match.params.category
+    ); // get category from url endpoint
 
     console.log(response);
     this.setState({
@@ -45,7 +38,6 @@ class RecipesByCategory extends Component {
     console.log(this.props);
     console.log(this.props.match.params);
 
-    //   console.log(this.props.location);
 
     const recipes = this.state.recipes;
     return (
@@ -57,7 +49,17 @@ class RecipesByCategory extends Component {
               {recipes.map((recipe, index) => (
                 <li key={index}>
                   {" "}
-                  {recipe.strMeal} <img src={recipe.strMealThumb} alt=""></img>
+                  <Router>
+                    <Link to={`/recipe-details/${recipe.strMeal}`}>
+                      {recipe.strMeal}
+                    </Link>
+                    <Route
+                      exact
+                      path={`/recipe-details/${recipe.strMeal}`}
+                      component={RecipesByCategory}
+                    />
+                  </Router>
+                  {recipe.strMeal}
                 </li>
               ))}
             </ul>
@@ -66,10 +68,7 @@ class RecipesByCategory extends Component {
       </div>
     );
   }
-  //   function getPageCategory() {
-  //     const { category } = useParams();
-  //     console.log(category);
-  //   }
+
 }
 
 export default RecipesByCategory;

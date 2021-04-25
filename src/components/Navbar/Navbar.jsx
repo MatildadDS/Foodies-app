@@ -1,5 +1,5 @@
-import SearchBar from "../../components/Navbar/SearchBar"
-import logo from "../../logo.svg"
+import SearchBar from "./SearchBar"
+// import logo from "../../logo.svg"
 import { NavLink } from "react-router-dom";
 import "./styles/Navbar.scss";
 

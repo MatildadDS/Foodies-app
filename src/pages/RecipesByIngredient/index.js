@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
 import RecipeDetailsService from "../../services/recipeDetails";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class RecipesByIngredient extends Component {
-
   constructor() {
     super();
 
@@ -11,47 +11,39 @@ class RecipesByIngredient extends Component {
       recipes: [],
       ingredient: "",
     };
-
   }
 
   async componentDidMount() {
     const response = await RecipeDetailsService.getIngredient(
       this.props.match.params.ingredient
-    ); 
-    console.log(this.props.match.params.ingredient);
-    console.log(response);
-    this.setState({
-      ingredient: response,
-      recipes: response.data.meals,
+    ).then((res) => {
+      console.log(res);
+      this.setState({
+        recipes: res.data.meals,
+      });
     });
 
-    // console.log(this.state.recipes);
+    console.log(this.state.recipes);
   }
 
   render() {
-    // console.log(this.props.location.pathname);
-    // console.log(this.props.location);
-    // console.log(this.props);
-    // console.log(this.props.match.params);
-
-    //   console.log(this.props.location);
-
-    const recipes = this.state.recipes;
     return (
       <div>
         <div className="all-recipesbycategories">
-          <h2 className="recipes-by-categorie">Ingredient</h2>
+          <h2 className="recipes-by-categorie">
+            ELEMENTS MAPPED BUT OUT OF PAGE BECAUSE OF CSS Ingredient:{" "}
+            {this.props.match.params.ingredient}
+          </h2>
           <div className="recipes-list">
             <ul>
-              {/* {recipes.map((recipe, index) => (
+              {this.state.recipes.map((recipe, index) => (
                 <li key={index}>
-                  {recipe.strMeal} <img src={recipe.strMealThumb} alt=""></img>
-                </li>
-              ))}   */}
-
-              {recipes.map((recipe, index) => (
-                <li key={index}>
-                  {recipe.strMeal} <img src={recipe.strMealThumb} alt=""></img>
+                  <Router>
+                    <Link to={`/recipe-details/${recipe.strMeal}`}>
+                      {recipe.strMeal}
+                    </Link>
+                    <Route path={`/recipe-details/:recipe`} />
+                  </Router>
                 </li>
               ))}
             </ul>

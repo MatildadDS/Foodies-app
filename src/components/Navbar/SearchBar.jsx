@@ -1,60 +1,65 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./styles/SearchBar.scss";
+import SearchBarService from "../../services/searchBar";
 
-
-function Search() {
-  const dataList = [
-
-  ];
-
-  const [searchText, setSearchText] = useState("");
-  const [data, setData] = useState(dataList);
-
-  // exclude column list from filter
-  const excludeColumns = ["id"];
-
-  // handle change event of search input
-  const handleChange = value => {
-    setSearchText(value);
-    filterData(value);
-  };
-
-  // filter records by search text
-  const filterData = (value) => {
-    const lowercasedValue = value.toLowerCase().trim();
-    if (lowercasedValue === "") setData(dataList);
-    else {
-      const filteredData = dataList.filter(item => {
-        return Object.keys(item).some(key =>
-          excludeColumns.includes(key) ? false : item[key].toString().toLowerCase().includes(lowercasedValue)
-        );
-      });
-      setData(filteredData);
-    }
+class SearchBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      recipe: {},
+      error: {},
+      searchText: "",
+      data: {},
+      meals: [0, 1],
+      searchData: {},
+    };
   }
 
-  return (
-    <div className="searchbar">
-      <input
-        style={{ marginLeft: 5, paddingLeft: 80, paddingRight: 60 }}
-        type="text"
-        placeholder="🔍 Type to search..."
-        value={searchText}
-        onChange={e => handleChange(e.target.value)}
-      />
-      <div className="searchbox-container">
-        {data.map((d, i) => {
-          return <div key={i} className="searchbox" style={{ backgroundColor: d.color }}>
-            <b>Categorie: </b>{d.categorie}<br />
-            <b>Name: </b>{d.name}<br />
-            <b>Country: </b>{d.country}<br />
-            <b>Ingredient: </b>{d.ingredient}
-          </div>
-        })}
-        <div className="clearboth"></div>
-      </div>
-    </div>
-  );
-}
+  handleChange(text) {
+    console.log(text);
+    this.setState({
+      searchText: text,
+    });
+    if (text === "") {
+      this.setState({
+        meals: [],
+      });
+    } else {
+      const response = SearchBarService.searchMealByName(text).then((data) => {
+        const meals = data.data.meals;
 
-export default Search;
+        let sortedMeals = null;
+        {
+          meals ? (sortedMeals = meals.sort()) : (sortedMeals = meals);
+        }
+        this.setState({
+          meals: sortedMeals,
+        });
+        console.log(this.state.meals);
+      });
+    }
+  }
+  async componentDidMount() {}
+
+  render() {
+    return (
+      <div>
+        <input
+          type="text"
+          placeholder="Seach..."
+          onChange={(e) => this.handleChange(e.target.value)}
+        ></input>
+        <ul style={{ display: "block" }}>
+          {!this.state.meals
+            ? null
+            : this.state.meals.map((meal, index) => (
+                <li style={{ color: "white" }} key={index}>
+                  <a href={meal.strMeal}> {meal.strMeal}</a>
+                </li>
+              ))}
+        </ul>
+      </div>
+    );
+  }
+}
+export default SearchBar;
