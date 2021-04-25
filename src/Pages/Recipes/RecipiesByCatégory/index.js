@@ -60,11 +60,11 @@ class RecipiesCatégory extends React.Component {
                   <a
                     className="ReadMore"
                     onClick={() =>
-                      (window.location.href = "/RecipiDétail/" + item.idMeal)
+                      (window.location.href = "/recipe-details/" + item.strMeal)
                     }
                   >
                     {" "}
-                    ...Read the recipie
+                    Read More...
                   </a>
 
                   <AddFavoritesButton
