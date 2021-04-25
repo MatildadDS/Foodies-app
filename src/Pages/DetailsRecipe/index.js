@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import axios from "axios";
 
@@ -62,3 +63,21 @@ class RecipeDetail extends React.Component {
 }
 
 export default RecipeDetail;
+=======
+import React from 'react';
+import Footer from '../../components/Footer/footer';
+import SearchBar from "../../components/Navbar/SearchBar";
+
+
+
+export default function DetailsRecipe() {
+    return (
+        <div>
+            <SearchBar />
+            <h2>Section Details Recipe</h2>
+            <Footer />
+
+        </div>
+    )
+}
+>>>>>>> 565c358de7bcade55cf19e99dbe39a1ac32601e5

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import "./Buttons.scss";
 
@@ -17,3 +18,6 @@ class DeleteFavorit extends React.Component {
 }
 
 export default DeleteFavorit;
+=======
+
+>>>>>>> 565c358de7bcade55cf19e99dbe39a1ac32601e5
