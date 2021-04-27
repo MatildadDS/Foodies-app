@@ -52,7 +52,7 @@ class RecipiesByAreas extends React.Component {
                             <h2>  {item.strMeal}</h2> 
                             <a className="ReadMore" onClick={() => 
                                 
-                                window.location.href='/RecipiDétail/'+ item.idMeal
+                                window.location.href='/recipe-details/'+ item.strMeal
                                 
                                 } > ...Read the recipie</a>
                             <AddFavoritesButton
