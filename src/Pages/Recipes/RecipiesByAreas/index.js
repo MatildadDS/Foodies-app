@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import SearchBox from "../../../components/Navbar/SearchBox";
-import Rundom from "../../../components/rundomRecipie";
+// import Rundom from "../../../components/rundomRecipie";
 import "../../../Pages/Recipes/RecipeCard.scss";
 import AddFavoritesButton from "../../../components/Buttons/AddFavoritesButton";
 
