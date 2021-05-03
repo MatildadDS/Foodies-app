@@ -29,7 +29,7 @@ class Areas extends React.Component{
     render(){
         var{isLoaded,Areas,searchField}=this.state;
     if(!isLoaded){
-        return <div> lodding...</div>
+        return <div> Loading...</div>
     }else{
        
         console.log(Areas)

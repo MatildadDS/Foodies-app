@@ -1,6 +1,6 @@
 import React from "react";
-import axios from "axios";
-import SearchBox from "../../components/Navbar/SearchBox";
+// import axios from "axios";
+// import SearchBox from "../../components/Navbar/SearchBox";
 import "../../Pages/Recipes/RecipeCard.scss";
 import DeleteFavorit from "../../components/Buttons/DeleteFavoritesButton";
 
