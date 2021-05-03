@@ -92,11 +92,5 @@ class RecipeDetails extends React.Component {
   }
 }
 
-// function makeAPIcall(category) {
-//   let apiResponse = RecipeDetailsService.getOneCategory(category);
-
-//   console.log(`redirect to: CATEGORY`);
-//   console.log(apiResponse);
-// }
 
 export default RecipeDetails;

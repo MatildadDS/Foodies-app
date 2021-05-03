@@ -1,6 +1,5 @@
 import React from "react";
 
-// better card HTML? (instead of <div>)
 class RecipeCard extends React.Component {
   render() {
     return (

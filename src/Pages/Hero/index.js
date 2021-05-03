@@ -18,7 +18,7 @@ class Hero extends React.Component {
             className="HeroButton"
             onClick={(event) => (window.location.href = "/homePage")}
           >
-            {" "}
+        
             Discover our recipes
           </button>
         </div>

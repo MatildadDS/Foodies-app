@@ -3,9 +3,9 @@ import Catégories from "../../components/catégories";
 import Rundom from "../../components/rundomRecipie";
 import Title from "../../components/Titles";
 import Areas from "../../components/Areas";
-import Hero from "../Hero";
+// import Hero from "../Hero";
 
-import SearchBox from "../../components/Navbar/SearchBox";
+// import SearchBox from "../../components/Navbar/SearchBox";
 
 class HomePage extends React.Component {
   render() {
