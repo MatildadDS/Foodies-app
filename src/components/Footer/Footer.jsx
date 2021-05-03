@@ -27,7 +27,7 @@ class Footer extends React.Component{
                               <section className="secondSection">
                                     <ul>
                                       <li className="list"><a href="/homePage">Home </a> </li>
-                                      <li className="list"> <a href="/catégories">Catégories </a></li>
+                                      <li className="list"> <a href="/catégories">Categories </a></li>
                                       <li className="list"> <a href="/Areas">Meals by Areas  </a></li>
                                       
                                     </ul>

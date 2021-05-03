@@ -33,7 +33,7 @@ class Catégories extends React.Component{
     
         
             if(!isLoaded){
-                   return <div> lodding...</div>
+                   return <div> Loading...</div>
             }else{
       
                   console.log(catégories)
@@ -56,7 +56,7 @@ class Catégories extends React.Component{
                 
                           <div className="categories" onClick={() =>  window.location.href='/Recipises/category/'+ item.strCategory}>
                               <img className="catégoryImg" src={item.strCategoryThumb}></img>
-                                <p>  Recipies of {item.strCategory}</p> 
+                                <p>  Recipes of {item.strCategory}</p> 
                                 
                            </div>
                 

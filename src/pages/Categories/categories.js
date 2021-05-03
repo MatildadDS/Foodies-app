@@ -24,7 +24,7 @@ class CategorieContent extends Component {
 
     return (
       <div>
-        <h2 className="categorie-title">Find a recipe by categories</h2>
+        <h2 className="categorie-title">Find a recipe by category</h2>
 
         <div className="all-countries">
           <div className="categorie-list">

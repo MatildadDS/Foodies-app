@@ -40,7 +40,8 @@ class Areas extends React.Component{
                    searchField:e.target.value})
           
                  } />
-                           <h2> Our Areas</h2>
+                           <h2>Areas</h2>
+
                         <div className="container">
                                {Areas.meals.filter(
                                    item=>{
@@ -50,7 +51,7 @@ class Areas extends React.Component{
                                ).map(item=>(
                 
                              <h2 className="AreasNames"  onClick={() =>  window.location.href='/Recipises/Area/'+item.strArea}>
-                                    Recipies from  {item.strArea}</h2>
+                                    {item.strArea}</h2>
      
                                     ))}
                         </div>

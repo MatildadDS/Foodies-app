@@ -32,12 +32,12 @@ class RecipiesCatégory extends React.Component {
 
     // returnnning sata
     if (!isLoaded) {
-      return <div> lodding...</div>;
+      return <div> Loading...</div>;
     } else {
       return (
         <div>
           <SearchBox
-            placeholder="Search the name of meal"
+            placeholder="Search the name of a meal..."
             handelChange={(e) =>
               this.setState({
                 searchField: e.target.value,

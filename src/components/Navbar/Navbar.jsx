@@ -18,7 +18,7 @@ function Navbar() {
                     Countries
                 </NavLink>
                 <NavLink exact activeClassName="current" to="/MyFavorite">
-                    Favoris
+                    Favorites
                 </NavLink>
 
             </nav >

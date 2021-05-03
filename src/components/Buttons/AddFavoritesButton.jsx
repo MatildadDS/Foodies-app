@@ -28,7 +28,7 @@ class AddFavoritesButton extends React.Component{
         console.log(this.props.onClick)
         return (          
             <button onClick={() => this.addToFavorite(this.props.RecipieId,this.props.RecipieName,this.props.RecipImg)}  className="ButtonAdd">
-                Add to favorit
+                Add to favorites
                  </button> 
         )
     }
