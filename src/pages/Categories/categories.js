@@ -39,7 +39,7 @@ class CategorieContent extends Component {
                   }
                 >
                   <a href={`/Recipises/category/${categorie.strCategory}`}>
-                  {/* <a href={`/ses/category/${categorie.strCategory}`}> */}
+                    {/* <a href={`/ses/category/${categorie.strCategory}`}> */}
                     {categorie.strCategory}
                   </a>
                   <img src={categorie.strCategoryThumb} alt="#"></img>

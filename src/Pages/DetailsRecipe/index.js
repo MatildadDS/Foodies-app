@@ -1,4 +1,3 @@
-
 import React from "react";
 
 import axios from "axios";
@@ -6,6 +5,8 @@ import HeaderRecipeDetails from "../../components/Header/HeaderRecipeDetails";
 import RecipeDetails from "../../components/Recipes/RecipeDetails";
 
 import ReactPlayer from "react-player/youtube";
+
+import "./Details.scss";
 
 class RecipeDetailsPage extends React.Component {
   constructor(props) {
@@ -24,8 +25,6 @@ class RecipeDetailsPage extends React.Component {
         `https://themealdb.com/api/json/v1/1/search.php?s=${this.props.match.params.recipe}`
       )
       .then((res) => {
-       
-
         this.setState({
           recipe: res.data.meals[0],
         });
@@ -35,8 +34,6 @@ class RecipeDetailsPage extends React.Component {
         });
       });
     console.log(this.props.match.params.recipe);
-
-
   }
 
   render() {
@@ -46,11 +43,11 @@ class RecipeDetailsPage extends React.Component {
     };
 
     return (
-      <>
+      <div className="recipe-container">
         <HeaderRecipeDetails data={recipeObj} />
         <RecipeDetails data={recipeObj} />
         <ReactPlayer url={recipeObj} />
-      </>
+      </div>
     );
   }
 }

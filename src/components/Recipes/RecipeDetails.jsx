@@ -41,56 +41,78 @@ class RecipeDetails extends React.Component {
 
   render() {
     const recipe = this.props.data.recipe;
-
+    console.log("strIngredient12".split("strIngredient")[1]);
     return (
       <section>
         <figure>
           <img src={recipe.strMealThumb} alt={recipe.strMeal} />
         </figure>
-        <h3>{recipe.strMeal}</h3>
+        <h2>Category</h2>
+
+        <Router>
+          <Link to={`/RecipesByCategory/${recipe.strCategory}`}>
+            {recipe.strCategory}
+          </Link>
+          <Route
+            exact
+            path="/RecipesByCategory/:category"
+
+            // component={RecipesByCategory}
+          />
+        </Router>
+        <h3>Tags</h3>
+        <p>
+          <a href={`tags/${recipe.strTags}`}>{recipe.strTags}</a>
+        </p>
+
+        <h3>Ingredients</h3>
+        <div className="ingredients-container">
+          <ul className="ingredients-list">
+            <Router>
+              {Object.keys(recipe).map((keyName, index) =>
+                keyName !== "" ? (
+                  keyName.includes("strIngredient") ? (
+                    keyName !== "" ? (
+                      <span key={index}>
+                        <Link to={`/RecipesByIngredient/${recipe[keyName]}`}>
+                          {recipe[keyName]}
+                          {/* {keyName != null
+                            ? `${recipe[keyName].split("strIngredient")[1]}`
+                            : null} */}
+                        </Link>
+                      </span>
+                    ) : null
+                  ) : null
+                ) : null
+              )}
+            </Router>
+          </ul>
+          <ul>
+            {/* {Object.keys(recipe).map((keyName, index) =>
+              keyName !== "" ? (
+                keyName.includes("strMeasure") ? (
+                  keyName !== "" ? (
+                    <div key={index}>{recipe[keyName]}</div>
+                  ) : null
+                ) : null
+              ) : null
+            )} */}
+          </ul>
+        </div>
+
         <h3>Instructions</h3>
         <ul>
           {this.state.splittedRecipeInstructions.map((sentence, index) => (
             <li key={index}>{sentence} </li>
           ))}
         </ul>
-        <h3>Ingredients</h3>
 
-        <Router>
-          {Object.keys(recipe).map((keyName, index) =>
-            keyName !== "" ? (
-              keyName.includes("strIngredient") ? (
-                keyName !== "" ? (
-                  <div key={index}>
-                    <Link to={`/RecipesByIngredient/${recipe[keyName]}`}>
-                      {recipe[keyName]}
-                    </Link>
-                  </div>
-                ) : null
-              ) : null
-            ) : null
-          )}
-        </Router>
-        <h3>Measures</h3>
-
-        <ul>
-          {Object.keys(recipe).map((keyName, index) =>
-            keyName !== "" ? (
-              keyName.includes("strMeasure") ? (
-                keyName !== "" ? (
-                  <div key={index}>{recipe[keyName]}</div>
-                ) : null
-              ) : null
-            ) : null
-          )}
-        </ul>
-        <div>
+        {/* <div>
           <button>Add to Favorites</button>
-        </div>
+        </div> */}
       </section>
     );
   }
 }
-
 
 export default RecipeDetails;

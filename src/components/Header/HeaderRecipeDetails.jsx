@@ -26,23 +26,23 @@ class HeaderRecipeDetails extends React.Component {
           <p>{recipe.IdMeal}</p>
           <img src="" alt={recipe.area} />
         </div>
-        <h2>
-          Category:
-          <Router>
-            <Link to={`/RecipesByCategory/${recipe.strCategory}`}>
-              {recipe.strCategory}
-            </Link>
-            <Route
-              exact
-              path="/RecipesByCategory/:category"
+        {/* <h2>Category</h2>
 
-              // component={RecipesByCategory}
-            />
-          </Router>
-        </h2>
+        <Router>
+          <Link to={`/RecipesByCategory/${recipe.strCategory}`}>
+            {recipe.strCategory}
+          </Link>
+          <Route
+            exact
+            path="/RecipesByCategory/:category"
+
+            // component={RecipesByCategory}
+          />
+        </Router>
+        <h3>Tags</h3>
         <p>
-          Tags: <a href={`tags/${recipe.strTags}`}>{recipe.strTags}</a>
-        </p>
+          <a href={`tags/${recipe.strTags}`}>{recipe.strTags}</a>
+        </p> */}
       </header>
     );
   }

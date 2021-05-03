@@ -1,6 +1,4 @@
-import RecipeCard from './RecipeCard';
-import RecipeDetails from './RecipeDetails';
+import RecipeCard from "./RecipeCard";
+import RecipeDetails from "./RecipeDetails";
 
-
-
-export { RecipeCard, RecipeDetails};
+export { RecipeCard, RecipeDetails };
