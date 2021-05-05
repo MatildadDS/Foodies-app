@@ -41,7 +41,7 @@ class RecipeDetails extends React.Component {
 
   render() {
     const recipe = this.props.data.recipe;
-    console.log("strIngredient12".split("strIngredient")[1]);
+    // console.log("strIngredient12".split("strIngredient")[1]);
     return (
       <section>
         <figure>
@@ -70,18 +70,13 @@ class RecipeDetails extends React.Component {
           <ul className="ingredients-list">
             <Router>
               {Object.keys(recipe).map((keyName, index) =>
-                keyName !== "" ? (
-                  keyName.includes("strIngredient") ? (
-                    keyName !== "" ? (
-                      <span key={index}>
-                        <Link to={`/RecipesByIngredient/${recipe[keyName]}`}>
-                          {recipe[keyName]}
-                          {/* {keyName != null
-                            ? `${recipe[keyName].split("strIngredient")[1]}`
-                            : null} */}
-                        </Link>
-                      </span>
-                    ) : null
+                keyName.includes("strIngredient") ? (
+                  keyName !== "" ? (
+                    <span key={index}>
+                      <Link to={`/RecipesByIngredient/${recipe[keyName]}`}>
+                        {recipe[keyName]}
+                      </Link>
+                    </span>
                   ) : null
                 ) : null
               )}

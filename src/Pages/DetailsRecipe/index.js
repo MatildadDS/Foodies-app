@@ -33,7 +33,7 @@ class RecipeDetailsPage extends React.Component {
           splittedRecipeInstructions: splitted,
         });
       });
-    console.log(this.props.match.params.recipe);
+    // console.log(this.props.match.params.recipe);
   }
 
   render() {

@@ -48,7 +48,6 @@ class Rundom extends React.Component {
                     (window.location.href = "/RecipiDétail/" + item.idMeal)
                   }
                 >
-                  {" "}
                   Read the recipe...
                 </a>
               </div>
